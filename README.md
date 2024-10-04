@@ -1,3 +1,3 @@
-# Pulse: Smart Transformer Monitoring System
+# Foresight: Smart Transformer Monitoring System
 
-Pulse is a predictive maintenance solution for power transformers.
+Foresight is a predictive maintenance solution for power transformers.
