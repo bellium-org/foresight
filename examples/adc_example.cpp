@@ -22,14 +22,14 @@ int main(void) {
   USART_Init();
 
   ADC_Init();
-  ADC_Enable(ADC2_PIN);
-  ADC_Enable(ADC3_PIN);
+  ADC_Enable(ADC2);  
+  ADC_Enable(ADC3);
 
   printf("Setup Complete \n");
 
   while (1) {
-    float adc2 = ADC_ReadVoltage(ADC2_PIN);
-    float adc3 = ADC_ReadVoltage(ADC3_PIN);
+    float adc2 = ADC_ReadVoltage(ADC2); 
+    float adc3 = ADC_ReadVoltage(ADC3);  
 
     printf("Voltage: %.2f V\n", adc2);
     printf("Voltage: %.2f V\n\n", adc3);

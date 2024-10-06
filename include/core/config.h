@@ -22,10 +22,10 @@
 // *********************************************************************
 /* System States */
 typedef enum {
-  STATE_COLLECT,   // Collecting vibration data from accelerometer
-  STATE_PROCESS,   // Processing and analysing the collected data
-  STATE_TRANSMIT,  // Transmitting results via LoRa
-  STATE_IDLE       // Sleep state when low power
+  STATE_COLLECT,   
+  STATE_PROCESS, 
+  STATE_TRANSMIT,  
+  STATE_IDLE      
 } SystemState;
 
 #endif  // CONFIG_H

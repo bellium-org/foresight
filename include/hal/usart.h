@@ -1,20 +1,27 @@
 /**
  * @file usart.h
- * @brief USART interface to be able print to serial port.
+ * @brief USART interface to be able to print to serial port.
  *
- * USART for Atmega328p
+ * USART for Atmega328pb
  *
  * @author Nasar Eddaoui, Nathan Nguyen (edited 05/10/24)
  * @link https://github.com/Nasar165/ATMEGA328-UART/blob/main/src/usart.h
  * @date 13/04/21
  */
 
+/*  TODO: Fix PCB / Schematic
+
+    Currently using pin PD0 amd PD1 for LoRa Radio but we need it for Tx and Rx,
+   especially for debugging.
+
+*/
+
 #ifndef USART_H
 #define USART_H
 
-#include <avr/io.h>
 #include <stdio.h>
-#include <util/delay.h>
+
+#include "config.h"
 
 // ***********************************************************************************************
 #define UBRR ((F_CPU / (BAUD_RATE * 16UL)) - 1)
@@ -29,30 +36,9 @@
   (USART_MODE_ASYNC | USART_PARITY_NONE | USART_STOP_BITS_1 | USART_DATA_BITS_8)
 
 // ***********************************************************************************************
-extern FILE usart_stdout;
 
-void USART_Init(void) {
-  // Set Baud rate
-  UBRR0H = (UBRR >> 8);
-  UBRR0L = UBRR;
-
-  UCSR0C = USART_CONFIG;
-  UCSR0B = (1 << RXEN0) | (1 << TXEN0);
-  fdev_setup_stream(&usart_stdout, USART_Transmit, NULL, _FDEV_SETUP_WRITE);
-  stdout = &usart_stdout;
-}
-
-char USART_Recieve(void) {
-  // Wait for the Buffer to fill
-  loop_until_bit_is_set(UCSR0A, RXC0);
-  return UDR0;
-}
-
-int USART_Transmit(char c, FILE *stream) {
-  if (c == '\n') USART_Transmit('\r', stream);
-  loop_until_bit_is_set(UCSR0A, UDRE0);
-  UDR0 = c;
-  return 0;
-}
+void USART_Init(void);
+char USART_Recieve(void);
+int USART_Transmit(char, FILE*);
 
 #endif  // USART_H

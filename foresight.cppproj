@@ -54,6 +54,18 @@
       <ToolName>mEDBG</ToolName>
     </com_atmel_avrdbg_tool_medbg>
     <avrtoolinterface>debugWIRE</avrtoolinterface>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+        <InterfaceName>
+        </InterfaceName>
+      </ToolOptions>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Simulator</ToolName>
+    </com_atmel_avrdbg_tool_simulator>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -135,6 +147,9 @@
     <ListValues>
       <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
       <Value>../include</Value>
+      <Value>../include/core</Value>
+      <Value>../include/drivers</Value>
+      <Value>../include/hal</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcc.compiler.optimization.level>
@@ -153,6 +168,9 @@
     <ListValues>
       <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
       <Value>../include</Value>
+      <Value>../include/hal</Value>
+      <Value>../include/drivers</Value>
+      <Value>../include/core</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcccpp.compiler.optimization.level>
@@ -183,12 +201,46 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="main.cpp">
+    <Compile Include="include\core\config.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="usart.cpp">
+    <Compile Include="include\core\led.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="include\core\power.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\drivers\adxl362.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\hal\adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\hal\spi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\hal\usart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\hal\adc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\hal\usart.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="include" />
+    <Folder Include="include\hal" />
+    <Folder Include="include\core" />
+    <Folder Include="include\drivers" />
+    <Folder Include="src" />
+    <Folder Include="src\core" />
+    <Folder Include="src\hal" />
+    <Folder Include="src\drivers" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
