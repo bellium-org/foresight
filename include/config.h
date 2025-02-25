@@ -12,15 +12,8 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// **********************************************************************
-/* CPU Clock Frequency */
-#define F_CPU 16000000UL
+#define BAUD_RATE 115200
 
-/* Baud Rate */
-#define BAUD_RATE 9600
-
-// *********************************************************************
-/* System States */
 typedef enum {
   STATE_COLLECT,   
   STATE_PROCESS, 
