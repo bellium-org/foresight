@@ -1,0 +1,6 @@
+{
+    "C_Cpp.default.compilerPath": "/Users/nathan/.platformio/packages/toolchain-atmelavr/bin/avr-gcc",
+    "files.associations": {
+        "arduino.h": "c"
+    }
+}
