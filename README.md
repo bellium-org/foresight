@@ -40,9 +40,9 @@ Here’s a list of tasks that need to be completed for this project:
 - [x] Setup uart to be able to connect via serial.
 - [x] Measure the voltage and magnetic field strength from the adc.
 - [ ] Write the low power sleep mode and wakeup protocol
-- [ ] Control the NMOS switch
-- [ ] Interface with the LoRa transceiver (RFM95W)
-- [ ] Transmit data packets using the LoRa interface
+- [X] Control the NMOS switch
+- [X] Interface with the LoRa transceiver (RFM95W)
+- [X] Transmit data packets using the LoRa interface
 - [ ] Interface with the accelerometer (ADXL362)
 - [ ] Read dummy data from the accelerometer
 - [ ] Combine the entire system 
