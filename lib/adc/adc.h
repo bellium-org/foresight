@@ -38,14 +38,14 @@ void initialiseADC();
 /**
  * @brief Reads the voltage of the energy source.
  * 
- * @return float - The voltage at the energy source.
+ * @return (float) The voltage at the energy source in Volts.
  */
 float readVoltage();
 
 /**
  * @brief Reads the magnetic field strength.
  * 
- * @return float - The magnetic field strength.
+ * @return (float) The magnetic field strength.
  */
 float readMagneticField(); // TODO (Nathan): May need a op-amp to level shift to be able to read micro voltage levels for conversions.
 

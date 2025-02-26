@@ -6,19 +6,24 @@
  * used throughout the project.
  *
  * @author Nathan Nguyen
- * @date 05/10/24
+ * @date 26/02/25
  */
 
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include <Arduino.h>
+
 #define BAUD_RATE 115200
 
-typedef enum {
-  STATE_COLLECT,   
-  STATE_PROCESS, 
-  STATE_TRANSMIT,  
-  STATE_IDLE      
-} SystemState;
+/* NMOS Switch */
+#define DEVICE_SW PIN_PE0
+
+/* LoRa Transceiver */
+#define DIO0 PIN_PD0
+#define SCK0 PIN_PB5
+#define MISO0 PIN_PB4
+#define MOSI0 PIN_PB3
+#define NSS0 PIN_PB2
 
 #endif  // CONFIG_H
