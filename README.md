@@ -1,7 +1,7 @@
 # Foresight: Transformer Monitoring System
 
 ## Overview
-A maintenance free power transformer monitoring system that performs vibration analysis to predict transformer abnormalities.  
+A maintenance free power transformer monitoring system that performs vibration analysis to predict transformer abnormalities.
 
 ## Table of Contents
 
@@ -20,8 +20,8 @@ A maintenance free power transformer monitoring system that performs vibration a
 - NMOS fet to turn off power to the lora transceiver and accelerometer when not required.
 
 ### Hardware Setup
+- [Foresight Processing Board](https://github.com/bellium-org/foresight-processing)
 
-<img src="assets/schematic.png" alt="Description of image" width="500" />
 
 ## Software Setup
 
@@ -48,3 +48,6 @@ Here’s a list of tasks that need to be completed for this project:
 - [ ] Combine the entire system 
 - [ ] Test in the lab on a small transformer
 - [ ] Test in the field on a real transformer
+
+## Authors
+- Nathan Nguyen
