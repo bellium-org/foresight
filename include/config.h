@@ -27,6 +27,9 @@
 #define NSS0 PIN_PB2
 
 /* Accelerometer */
-
+#define SCK1 PIN_PC1
+#define MISO1 PIN_PC0
+#define MOSI1 PIN_PE3
+#define NSS1 PIN_PE2
 
 #endif  // CONFIG_H

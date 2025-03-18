@@ -5,7 +5,7 @@ RFM95::RFM95(int nss, int dio0) {
     _dio0 = dio0;
 }
 
-bool RFM95::initialiseRFM95(long frequency) {
+bool RFM95::initialise(long frequency) {
     pinMode(_nss, OUTPUT);
     pinMode(_dio0, INPUT);
 
@@ -14,11 +14,12 @@ bool RFM95::initialiseRFM95(long frequency) {
     SPI.begin();
 
     if (!LoRa.begin(frequency)) {
-        Serial.println("LoRa initialization failed!");
+        Serial.println("LoRa initialisation failed!");
         return false;
     }
 
     if (!checkVersion(VERSION)) {
+        Serial.println("LoRa board detected has a different version number!");
         return false;
     }
 
@@ -29,8 +30,8 @@ void RFM95::sendPacket(const String &message) {
     LoRa.beginPacket();
     LoRa.print(message);
     LoRa.endPacket();
-    Serial.print("Sent packet: ");
-    Serial.println(message);
+    // Serial.print("Sent packet: ");
+    // Serial.println(message);
 }
 
 uint8_t RFM95::readRegister(uint8_t addr) {

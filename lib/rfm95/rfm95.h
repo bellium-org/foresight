@@ -37,7 +37,7 @@ public:
      * 
      * @return (bool) If successfully initialised return true else false.
      */
-    bool initialiseRFM95(long frequency);
+    bool initialise(long frequency);
 
     /**
      * @brief Send a string packet
